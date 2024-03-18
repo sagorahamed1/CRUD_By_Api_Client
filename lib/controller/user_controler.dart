@@ -78,6 +78,7 @@ class UserController extends GetxController {
       if(response.statusCode == 200){
         Map <String, dynamic> unKnownMap = response.body;
         List unKnowList = unKnownMap['data'];
+        print("========$unKnowList");
 
          for(var element in unKnowList){
            unKnownLists.add(UnKnown.fromJson(element));
@@ -91,6 +92,8 @@ class UserController extends GetxController {
     }
   }
 }
+
+
 
 class Users {
   final int id;
