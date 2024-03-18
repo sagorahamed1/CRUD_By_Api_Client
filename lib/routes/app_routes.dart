@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 
-import '../views/location/location_screen.dart';
 import '../views/screens/Auth/login/login_screen.dart';
 import '../views/screens/Auth/sign_up/sign_up.dart';
 import '../views/screens/User/user_screen.dart';
+import '../views/screens/location/location_screen.dart';
 
 
 class AppRoutes {

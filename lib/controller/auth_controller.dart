@@ -58,7 +58,7 @@ class AuthController extends GetxController {
       var responsebody = jsonDecode(response.body);
       var token = responsebody["token"];
       if(token != null){
-        Get.offAllNamed(AppRoutes.userScreen);
+        // Get.offAllNamed(AppRoutes.userScreen);
       }
       print("=========================$body \n $token");
     }

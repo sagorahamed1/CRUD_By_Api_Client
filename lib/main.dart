@@ -1,8 +1,5 @@
 import 'package:api_getx/routes/app_routes.dart';
 import 'package:api_getx/themes/themes.dart';
-import 'package:api_getx/views/location/location_screen.dart';
-import 'package:api_getx/views/screens/Auth/sign_up/sign_up.dart';
-import 'package:api_getx/views/screens/User/user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -26,9 +23,9 @@ class MyApp extends StatelessWidget {
 
           darkTheme: Themes().darkTheme,
 
-          initialRoute: AppRoutes.locationScreen,
+          initialRoute: AppRoutes.logInScreen,
           getPages: AppRoutes.routes,
-        home: LocationScreen()
+        home: LogInScreen()
       ),
       designSize: Size(333, 900),
     );

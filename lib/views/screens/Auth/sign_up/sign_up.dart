@@ -1,5 +1,7 @@
 import 'package:api_getx/controller/auth_controller.dart';
+import 'package:api_getx/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 
@@ -36,6 +38,7 @@ class SignUpScreen extends StatelessWidget {
              ElevatedButton(
               onPressed: () {
                 authController.handleSignUp();
+                Get.toNamed(AppRoutes.logInScreen);
               },
               child: const Text('Signup'),
             )

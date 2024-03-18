@@ -49,9 +49,10 @@ class ApiClient extends GetxService {
 
     try {
       debugPrint('====> API Call: $uri\nHeader: ${headers ?? mainHeaders}');
-      http.Response response = await client.get(
-          Uri.parse(ApiConstants.baseUrl + uri),
-          headers: headers ?? mainHeaders).timeout(const Duration(seconds: timeOutInSeconds));
+      http.Response response = await client
+          .get(Uri.parse(ApiConstants.baseUrl + uri),
+              headers: headers ?? mainHeaders)
+          .timeout(const Duration(seconds: timeOutInSeconds));
       return handleResponse(response, uri);
     } catch (e) {
       print("=================${e.toString()}");
@@ -59,6 +60,28 @@ class ApiClient extends GetxService {
     }
   }
 
+  ///===================Delete Request=====================>
+  static Future<Response> deleteData(String uri,
+      {Map<String, String>? headers ,dynamic body}) async {
+    var mainHeaders = {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Bearer $bearerToken'
+    };
+
+    try {
+      debugPrint(
+          "=========> Api Call: $uri\n Header: ${headers ?? mainHeaders}");
+      debugPrint("=========> Api Call: $uri\n Body: $body");
+
+      http.Response response = await http
+          .delete(Uri.parse(ApiConstants.baseUrl + uri),
+              headers: headers ?? mainHeaders, body: body)
+          .timeout(const Duration(seconds: timeOutInSeconds));
+      return handleResponse(response, uri);
+    } catch (e) {
+      return const Response(statusCode: 1, statusText: noInternetMessage);
+    }
+  }
 
   ///======================handle Response------------------------->
   static Response handleResponse(http.Response response, String uri) {

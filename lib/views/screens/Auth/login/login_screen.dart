@@ -47,6 +47,7 @@ class LogInScreen extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     _authController.heandleLogin();
+                    Get.toNamed(AppRoutes.userScreen);
                   },
                   child: const Text('Log In'),
                 ),
